@@ -1,0 +1,44 @@
+<div class="row mt-4">
+    <div class="col-12">
+        <h4>User Registration form</h4>
+    </div>
+</div>
+
+<div class="col-12">
+    <div class="row"  *ngIf="authErrors">
+        <div class="col-12 alert alert-danger">
+            {{authErrors?.message}}
+        </div>
+    </div>
+
+
+    <form #userRegForm="ngForm" (ngSubmit)="createUser(userRegForm)" autocomplete="off">
+            <div class="form-group">
+                <label for="FirstName">First Name</label>
+                    <input name="FirstName" #FirstName="ngModel" ngModel class="form-control" placeholder="First Name" >
+                    
+                  </div>
+                  <div class="form-group">
+                      <label for="LastName">Last Name</label>
+                          <input name="LastName" #FirstName="ngModel" ngModel class="form-control" placeholder="Last Name" >
+                          
+                        </div>
+                  <div class="form-group">
+                      <label for="email">Email</label>
+                    <input name="email" #position="ngModel" ngModel class="form-control" placeholder="email" >
+                   
+                  </div>
+                  
+                    <div class="form-group">
+                        <label for="Password">Password</label>
+                      <input name="password" #password="ngModel" ngModel class="form-control" placeholder="Password" >
+                     
+                    </div>
+                    
+                  <div class="form-group col-md-4" >
+                    <button type="submit"  class="btn btn-lg  btn-info mr-2">Submit</button>
+                    <button type="submit"  class="btn btn-lg  btn-info" (click)="cancel()">Cancel</button>
+                  </div>
+                  
+    </form>
+</div>
